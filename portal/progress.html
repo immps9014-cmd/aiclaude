@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>진행 현황 · edu.aiclaude.kr</title>
+  <link rel="stylesheet" href="assets/style.css" />
+</head>
+<body>
+  <header class="site">
+    <div class="wrap">
+      <nav class="nav">
+        <span class="brand">edu<span>.aiclaude</span>.kr</span>
+        <span class="spacer"></span>
+        <a class="link" href="index.html">홈</a>
+        <a class="link" href="onboarding.html">시작 가이드</a>
+        <a class="link" href="progress.html">진행 현황</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="wrap">
+    <section style="padding-top:36px">
+      <h2 class="section-title">📊 교육생 진행 현황</h2>
+      <p class="section-sub">15명의 프로젝트 저장소와 배포 링크, 진행 상태입니다.
+         (강사가 학생 정보를 업데이트하면 이 표가 갱신됩니다.)</p>
+
+      <table class="board">
+        <thead>
+          <tr>
+            <th style="width:60px">번호</th>
+            <th>교육생</th>
+            <th>프로젝트</th>
+            <th>저장소</th>
+            <th>배포</th>
+            <th>상태</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- 강사: 아래 행을 학생 정보로 교체하세요. 총 15행. -->
+          <tr>
+            <td>01</td>
+            <td>학생01</td>
+            <td>프로젝트명</td>
+            <td><a href="#">repo</a></td>
+            <td><a href="#">demo</a></td>
+            <td><span class="badge prog">진행중</span></td>
+          </tr>
+          <tr>
+            <td>02</td>
+            <td>학생02</td>
+            <td>—</td>
+            <td><span style="color:var(--muted)">미등록</span></td>
+            <td><span style="color:var(--muted)">—</span></td>
+            <td><span class="badge todo">준비</span></td>
+          </tr>
+          <tr>
+            <td>03</td><td>학생03</td><td>—</td>
+            <td><span style="color:var(--muted)">미등록</span></td>
+            <td><span style="color:var(--muted)">—</span></td>
+            <td><span class="badge todo">준비</span></td>
+          </tr>
+          <!-- 04 ~ 15 동일 형식으로 추가 -->
+        </tbody>
+      </table>
+
+      <p style="color:var(--muted); margin-top:16px; font-size:14px">
+        상태 배지: <span class="badge todo">준비</span> 환경 구축 전 ·
+        <span class="badge prog">진행중</span> 개발 중 ·
+        <span class="badge ok">완료</span> 배포 완료
+      </p>
+    </section>
+  </div>
+
+  <footer class="site">
+    <div class="wrap">edu.aiclaude.kr · Claude Code 교육 과정</div>
+  </footer>
+</body>
+</html>
