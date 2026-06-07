@@ -3,7 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Claude Code 교육생 15명의 프로젝트 진행 현황 · 저장소 · 배포 링크" />
   <title>진행 현황 · edu.aiclaude.kr</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
   <link rel="stylesheet" href="assets/style.css" />
 </head>
 <body>
@@ -14,7 +16,7 @@
         <span class="spacer"></span>
         <a class="link" href="index.html">홈</a>
         <a class="link" href="onboarding.html">시작 가이드</a>
-        <a class="link" href="progress.html">진행 현황</a>
+        <a class="link active" href="progress.html">진행 현황</a>
       </nav>
     </div>
   </header>
@@ -22,58 +24,145 @@
   <div class="wrap">
     <section style="padding-top:36px">
       <h2 class="section-title">📊 교육생 진행 현황</h2>
-      <p class="section-sub">15명의 프로젝트 저장소와 배포 링크, 진행 상태입니다.
-         (강사가 학생 정보를 업데이트하면 이 표가 갱신됩니다.)</p>
+      <p class="section-sub">15명의 프로젝트 저장소와 배포 링크, 진행 상태입니다.</p>
+
+      <!-- 요약 통계 (자동 계산) -->
+      <div class="stats" id="stats"></div>
+
+      <!-- 검색 / 필터 -->
+      <div class="toolbar">
+        <input id="search" class="search" type="search" placeholder="🔍 이름·프로젝트 검색" />
+        <div class="filters" id="filters">
+          <button class="chip active" data-filter="all">전체</button>
+          <button class="chip" data-filter="todo">준비</button>
+          <button class="chip" data-filter="prog">진행중</button>
+          <button class="chip" data-filter="ok">완료</button>
+        </div>
+      </div>
 
       <table class="board">
         <thead>
           <tr>
-            <th style="width:60px">번호</th>
+            <th style="width:56px">번호</th>
             <th>교육생</th>
             <th>프로젝트</th>
             <th>저장소</th>
             <th>배포</th>
-            <th>상태</th>
+            <th style="width:90px">상태</th>
           </tr>
         </thead>
-        <tbody>
-          <!-- 강사: 아래 행을 학생 정보로 교체하세요. 총 15행. -->
-          <tr>
-            <td>01</td>
-            <td>학생01</td>
-            <td>프로젝트명</td>
-            <td><a href="#">repo</a></td>
-            <td><a href="#">demo</a></td>
-            <td><span class="badge prog">진행중</span></td>
-          </tr>
-          <tr>
-            <td>02</td>
-            <td>학생02</td>
-            <td>—</td>
-            <td><span style="color:var(--muted)">미등록</span></td>
-            <td><span style="color:var(--muted)">—</span></td>
-            <td><span class="badge todo">준비</span></td>
-          </tr>
-          <tr>
-            <td>03</td><td>학생03</td><td>—</td>
-            <td><span style="color:var(--muted)">미등록</span></td>
-            <td><span style="color:var(--muted)">—</span></td>
-            <td><span class="badge todo">준비</span></td>
-          </tr>
-          <!-- 04 ~ 15 동일 형식으로 추가 -->
-        </tbody>
+        <tbody id="rows"></tbody>
       </table>
+      <p id="empty" class="empty" hidden>검색 결과가 없습니다.</p>
 
       <p style="color:var(--muted); margin-top:16px; font-size:14px">
         상태 배지: <span class="badge todo">준비</span> 환경 구축 전 ·
         <span class="badge prog">진행중</span> 개발 중 ·
         <span class="badge ok">완료</span> 배포 완료
       </p>
+      <p id="updated" class="section-sub" style="font-size:13px; margin-top:8px"></p>
     </section>
   </div>
 
   <footer class="site">
     <div class="wrap">edu.aiclaude.kr · Claude Code 교육 과정</div>
   </footer>
+
+  <script>
+  /* ─────────────────────────────────────────────────────────────
+     강사 안내: 아래 STUDENTS 배열만 수정하면 표·요약 통계가 자동 갱신됩니다.
+       name     : 교육생 이름(또는 닉네임)
+       project  : 프로젝트명 (없으면 "")
+       repo     : GitHub 저장소 URL (없으면 "")
+       demo     : 배포(데모) URL (없으면 "")
+       status   : "todo"(준비) | "prog"(진행중) | "ok"(완료)
+     UPDATED 날짜도 갱신해 주세요.
+  ───────────────────────────────────────────────────────────── */
+  const UPDATED = "2026-06-07";
+  const STUDENTS = [
+    { name: "학생01", project: "",  repo: "", demo: "", status: "todo" },
+    { name: "학생02", project: "",  repo: "", demo: "", status: "todo" },
+    { name: "학생03", project: "",  repo: "", demo: "", status: "todo" },
+    { name: "학생04", project: "",  repo: "", demo: "", status: "todo" },
+    { name: "학생05", project: "",  repo: "", demo: "", status: "todo" },
+    { name: "학생06", project: "",  repo: "", demo: "", status: "todo" },
+    { name: "학생07", project: "",  repo: "", demo: "", status: "todo" },
+    { name: "학생08", project: "",  repo: "", demo: "", status: "todo" },
+    { name: "학생09", project: "",  repo: "", demo: "", status: "todo" },
+    { name: "학생10", project: "",  repo: "", demo: "", status: "todo" },
+    { name: "학생11", project: "",  repo: "", demo: "", status: "todo" },
+    { name: "학생12", project: "",  repo: "", demo: "", status: "todo" },
+    { name: "학생13", project: "",  repo: "", demo: "", status: "todo" },
+    { name: "학생14", project: "",  repo: "", demo: "", status: "todo" },
+    { name: "학생15", project: "",  repo: "", demo: "", status: "todo" },
+  ];
+
+  const LABEL = { todo: "준비", prog: "진행중", ok: "완료" };
+  const esc = (s) => String(s).replace(/[&<>"']/g, c =>
+    ({ "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;" }[c]));
+  const dash = '<span style="color:var(--muted)">—</span>';
+  const link = (url, text) =>
+    url ? `<a href="${esc(url)}" target="_blank" rel="noopener">${text}</a>`
+        : '<span style="color:var(--muted)">미등록</span>';
+
+  let activeFilter = "all";
+  let query = "";
+
+  function renderStats() {
+    const c = { todo: 0, prog: 0, ok: 0 };
+    STUDENTS.forEach(s => { c[s.status] = (c[s.status] || 0) + 1; });
+    const total = STUDENTS.length;
+    const pct = total ? Math.round((c.ok / total) * 100) : 0;
+    document.getElementById("stats").innerHTML = `
+      <div class="stat"><div class="stat-num">${total}</div><div class="stat-lbl">전체</div></div>
+      <div class="stat"><div class="stat-num" style="color:var(--muted)">${c.todo}</div><div class="stat-lbl">준비</div></div>
+      <div class="stat"><div class="stat-num" style="color:var(--warn)">${c.prog}</div><div class="stat-lbl">진행중</div></div>
+      <div class="stat"><div class="stat-num" style="color:var(--ok)">${c.ok}</div><div class="stat-lbl">완료</div></div>
+      <div class="stat wide">
+        <div class="stat-lbl" style="margin-bottom:8px">완료율 ${pct}%</div>
+        <div class="bar"><div class="bar-fill" style="width:${pct}%"></div></div>
+      </div>`;
+  }
+
+  function renderRows() {
+    const tbody = document.getElementById("rows");
+    const q = query.trim().toLowerCase();
+    const list = STUDENTS
+      .map((s, i) => ({ ...s, no: i + 1 }))
+      .filter(s => activeFilter === "all" || s.status === activeFilter)
+      .filter(s => !q ||
+        s.name.toLowerCase().includes(q) ||
+        (s.project || "").toLowerCase().includes(q));
+
+    tbody.innerHTML = list.map(s => `
+      <tr>
+        <td>${String(s.no).padStart(2, "0")}</td>
+        <td>${esc(s.name)}</td>
+        <td>${s.project ? esc(s.project) : dash}</td>
+        <td>${link(s.repo, "repo")}</td>
+        <td>${link(s.demo, "demo")}</td>
+        <td><span class="badge ${s.status}">${LABEL[s.status]}</span></td>
+      </tr>`).join("");
+
+    document.getElementById("empty").hidden = list.length > 0;
+  }
+
+  function render() { renderStats(); renderRows(); }
+
+  document.getElementById("search").addEventListener("input", e => {
+    query = e.target.value; renderRows();
+  });
+  document.getElementById("filters").addEventListener("click", e => {
+    const btn = e.target.closest(".chip");
+    if (!btn) return;
+    activeFilter = btn.dataset.filter;
+    document.querySelectorAll("#filters .chip").forEach(b =>
+      b.classList.toggle("active", b === btn));
+    renderRows();
+  });
+
+  document.getElementById("updated").textContent = "마지막 업데이트: " + UPDATED;
+  render();
+  </script>
 </body>
 </html>
