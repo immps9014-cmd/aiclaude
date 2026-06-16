@@ -105,7 +105,7 @@ EN = {
              "identified below for the purpose of setting out the fundamental terms concerning the "
              "supply of, and cooperation in respect of, Telom-X-Gene (the \"Product\").",
     "party_hdr": ["Category", "Party"],
-    "party_a": ["Party A (Supplier)", "TelomX Inc. (Telom-X-Gene)\nAddress: [Head Office Address]\nRepresentative: [Name]"],
+    "party_a": ["Party A (Supplier)", "TelomX Inc. (Telom-X-Gene)\nAddress: 431-16, Sannae-ro, Dong-gu, Daejeon, Republic of Korea\nRepresentative: Lee Jae-ho (Chairman)"],
     "party_b": ["Party B (Purchaser)", "[Name of Chinese Pharmaceutical Company]\nAddress: [Address in China]\nRepresentative: [Name]"],
     "party_note": "(Party A and Party B are each referred to as a \"Party\" and collectively as the \"Parties\".)",
     "sections": [
@@ -196,8 +196,8 @@ EN = {
     "sig": [
         ("Party A (Supplier)", "Party B (Purchaser)"),
         ("TelomX Inc.", "[Name of Chinese Pharmaceutical Company]"),
-        ("Representative: ________________ (Seal)", "Representative: ________________ (Seal)"),
-        ("Title:", "Title:"),
+        ("Representative: Lee Jae-ho (Seal)", "Representative: ________________ (Seal)"),
+        ("Title: Chairman", "Title:"),
         ("Date:", "Date:"),
     ],
     "disclaimer": "* This draft is a general template example. Please obtain a review by legal "
@@ -211,7 +211,7 @@ ZH = {
     "intro": "本谅解备忘录（以下简称\"本备忘录\"）由下列双方为约定有关 Telom-X-Gene"
              "（以下简称\"本产品\"）供应及合作的基本事项而签订。",
     "party_hdr": ["类别", "当事方"],
-    "party_a": ["甲方（供应方）", "TelomX 公司（Telom-X-Gene）\n地址：[总部地址]\n法定代表人：[姓名]"],
+    "party_a": ["甲方（供应方）", "TelomX 公司（Telom-X-Gene）\n地址：大韩民国大田广域市东区山内路431-16\n法定代表人：会长 李在镐"],
     "party_b": ["乙方（采购方）", "[中国制药公司名称]\n地址：[中国地址]\n法定代表人：[姓名]"],
     "party_note": "（以下甲方与乙方单独称为\"一方\"，合称为\"双方\"。）",
     "sections": [
@@ -284,8 +284,8 @@ ZH = {
     "sig": [
         ("甲方（供应方）", "乙方（采购方）"),
         ("TelomX 公司", "[中国制药公司名称]"),
-        ("法定代表人：________________ （盖章）", "法定代表人：________________ （盖章）"),
-        ("职务：", "职务："),
+        ("法定代表人：李在镐 （盖章）", "法定代表人：________________ （盖章）"),
+        ("职务：会长", "职务："),
         ("日期：", "日期："),
     ],
     "disclaimer": "※ 本草案为通用范本示例，签订前请务必由两国法律专业人士审阅。",
