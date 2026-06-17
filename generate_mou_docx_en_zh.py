@@ -89,10 +89,6 @@ def build_doc(cfg, font, filename):
                     for run in p.runs:
                         set_font(run)
 
-    doc.add_paragraph()
-    note = para(cfg["disclaimer"])
-    note.runs[0].italic = True
-
     doc.save(filename)
     print("saved", filename)
 
@@ -101,9 +97,9 @@ def build_doc(cfg, font, filename):
 EN = {
     "title": "Memorandum of Understanding",
     "subtitle": "Memorandum of Understanding on the Supply of Telom-X-Gene",
-    "intro": "This Memorandum of Understanding (the \"MOU\") is entered into between the Parties "
-             "identified below for the purpose of setting out the fundamental terms concerning the "
-             "supply of, and cooperation in respect of, Telom-X-Gene (the \"Product\").",
+    "intro": "This Memorandum of Understanding (the \"MOU\") is entered into on [ ] / [ ] / 20[ ] "
+             "between the Parties identified below for the purpose of setting out the fundamental terms "
+             "concerning the supply of, and cooperation in respect of, Telom-X-Gene (the \"Product\").",
     "party_hdr": ["Category", "Party"],
     "party_a": ["Party A (Supplier)", "TelomX Inc. (Telom-X-Gene)\nAddress: 431-16, Sannae-ro, Dong-gu, Daejeon, Republic of Korea\nRepresentative: Lee Jae-ho (Chairman)"],
     "party_b": ["Party B (Purchaser)", "[Name of Chinese Pharmaceutical Company]\nAddress: [Address in China]\nRepresentative: [Name]"],
@@ -181,8 +177,8 @@ EN = {
             "1. This MOU shall be governed by and construed in accordance with the laws of "
             "[the Republic of Korea / China / a third country].",
             "2. Any dispute arising in connection with this MOU shall first be resolved through mutual "
-            "consultation; failing which, it shall be finally settled by arbitration under the rules of "
-            "[SIAC / KCAB / CIETAC].",
+            "consultation; failing which, it shall be finally settled under the arbitration rules of the "
+            "International Court of Justice.",
         ]),
         ("Article 10 (Miscellaneous)", [
             "1. Any amendment to this MOU shall be made by written agreement of both Parties.",
@@ -208,7 +204,7 @@ EN = {
 ZH = {
     "title": "谅解备忘录",
     "subtitle": "关于 Telom-X-Gene 供应的谅解备忘录",
-    "intro": "本谅解备忘录（以下简称\"本备忘录\"）由下列双方为约定有关 Telom-X-Gene"
+    "intro": "本谅解备忘录（以下简称\"本备忘录\"）于 20[ ] 年 [ ] 月 [ ] 日 由下列双方为约定有关 Telom-X-Gene"
              "（以下简称\"本产品\"）供应及合作的基本事项而签订。",
     "party_hdr": ["类别", "当事方"],
     "party_a": ["甲方（供应方）", "TelomX 公司（Telom-X-Gene）\n地址：大韩民国大田广域市东区山内路431-16\n法定代表人：会长 李在镐"],
@@ -270,8 +266,7 @@ ZH = {
         ("第九条（准据法及争议解决）", [
             "1. 本备忘录的解释与适用以 [大韩民国／中国／第三国] 法律为准据法。",
             "2. 因本备忘录产生的争议，双方应首先通过协商解决；协商不成的，"
-            "提交 [新加坡国际仲裁中心（SIAC）／大韩商事仲裁院（KCAB）／中国国际经济贸易仲裁委员会（CIETAC）] "
-            "按其仲裁规则仲裁解决，仲裁裁决为终局裁决。",
+            "按国际法院的仲裁规则最终解决。",
         ]),
         ("第十条（其他）", [
             "1. 本备忘录的修改、变更须经双方书面同意。",

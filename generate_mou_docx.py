@@ -51,7 +51,7 @@ rs.bold = True
 rs.font.size = Pt(13)
 
 doc.add_paragraph()
-para("본 양해각서(이하 \"본 MOU\")는 아래의 당사자 간에 Telom-X-Gene(이하 \"본 제품\")의 "
+para("본 양해각서(이하 \"본 MOU\")는 20[ ]년 [ ]월 [ ]일 아래의 당사자 간에 Telom-X-Gene(이하 \"본 제품\")의 "
      "공급 및 협력에 관한 기본적 사항을 정하기 위하여 체결된다.")
 
 # Parties table
@@ -128,8 +128,7 @@ sections = [
     ("제9조 (준거법 및 분쟁해결)", [
         "1. 본 MOU의 해석 및 적용에 관하여는 [대한민국 / 중국 / 제3국] 법을 준거법으로 한다.",
         "2. 본 MOU와 관련하여 발생하는 분쟁은 우선 당사자 간 협의로 해결하며, 협의로 해결되지 아니하는 경우 "
-        "[싱가포르국제중재센터(SIAC) / 대한상사중재원(KCAB) / 중국국제경제무역중재위원회(CIETAC)]의 "
-        "중재규칙에 따라 중재로 최종 해결한다.",
+        "국제사법재판소의 중재규칙에 따라 최종 해결한다.",
     ]),
     ("제10조 (기타)", [
         "1. 본 MOU의 수정·변경은 양 당사자의 서면 합의에 의한다.",
@@ -171,10 +170,6 @@ for tbl in (t, sig):
                 for run in p.runs:
                     run.font.name = "Malgun Gothic"
                     run.element.rPr.rFonts.set(qn("w:eastAsia"), "Malgun Gothic")
-
-doc.add_paragraph()
-note = para("※ 본 초안은 일반적 양식 예시이며, 실제 체결 전에는 반드시 양국 법률 전문가의 검토를 받으시길 권합니다.")
-note.runs[0].italic = True
 
 doc.save("MOU_TelomX_공급계약.docx")
 print("saved MOU_TelomX_공급계약.docx")
