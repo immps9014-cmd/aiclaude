@@ -177,8 +177,8 @@ EN = {
             "1. This MOU shall be governed by and construed in accordance with the laws of "
             "[the Republic of Korea / China / a third country].",
             "2. Any dispute arising in connection with this MOU shall first be resolved through mutual "
-            "consultation; failing which, it shall be finally settled under the arbitration rules of the "
-            "International Court of Justice.",
+            "consultation; failing which, it shall be finally settled under the arbitration rules of an "
+            "international commercial arbitration institution.",
         ]),
         ("Article 10 (Miscellaneous)", [
             "1. Any amendment to this MOU shall be made by written agreement of both Parties.",
@@ -266,7 +266,7 @@ ZH = {
         ("第九条（准据法及争议解决）", [
             "1. 本备忘录的解释与适用以 [大韩民国／中国／第三国] 法律为准据法。",
             "2. 因本备忘录产生的争议，双方应首先通过协商解决；协商不成的，"
-            "按国际法院的仲裁规则最终解决。",
+            "按国际商事仲裁机构的仲裁规则最终解决。",
         ]),
         ("第十条（其他）", [
             "1. 本备忘录的修改、变更须经双方书面同意。",
